@@ -8,12 +8,6 @@ const port = 3000;
 
 app.set('view engine', 'ejs');
 
-app.get('/pagedjs', async (req, res) => {
-    const pagedjs = await fs.readFile(path.resolve(__dirname, 'node_modules', 'pagedjs', 'dist', 'paged.polyfill.js'));
-    res.type('.js');
-    res.send(pagedjs.toString());
-});
-
 app.get('/', async (req, res) => {
     const templatePath = path.resolve(__dirname, 'template.ejs');
     const outputPath = path.resolve(__dirname, 'tmp', 'output.pdf');
@@ -40,7 +34,7 @@ app.get('/', async (req, res) => {
 
     // Configura las opciones para guardar como PDF (tamaño de papel, márgenes, etc.)
     const pdfOptions = {
-        path: 'tmp/output.pdf',
+        path: outputPath,
         format: 'letter',
         margin: { top: '0cm', right: '0cm', bottom: '3cm', left: '0cm' },
         printBackground: true,
