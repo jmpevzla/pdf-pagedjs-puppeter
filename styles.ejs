@@ -1,0 +1,38 @@
+<style>
+    @page {
+        size: letter;
+        margin: 1.5cm;
+        @top-center {
+            content: element(header);
+        }
+        @bottom-center {
+            content: element(footer);
+            font-size:14px; 
+            color:#666;
+        }
+    }
+
+    .page-break {
+        break-after: always;
+    }
+    
+    header {
+        position: running(header);
+        display: block;
+        text-align: center;
+        font-weight: bold;
+        font-size: 16;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    main {
+        font-size: 28px;
+    }
+    footer {
+        position: running(footer);
+    }
+
+    .page-number:before {
+        content: "Página " counter(page) " de " counter(pages);
+    }
+   
+</style>

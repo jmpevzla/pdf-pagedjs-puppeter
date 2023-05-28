@@ -1,0 +1,24 @@
+{
+  "name": "pdfs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --exec node index.js",
+    "cli": "pagedjs-cli tmp/output.html -o tmp/result.pdf",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "pagedjs": "^0.4.1",
+    "pagedjs-cli": "^0.3.4",
+    "puppeteer": "^20.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}

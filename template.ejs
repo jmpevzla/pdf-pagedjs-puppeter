@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template EJS!</title>
+    <%- include('paged'); %>
+    <%- include('styles'); %>
+</head>
+<body>
+    <header><%= header.title %></header>
+    <footer>
+        <p class="date">Fecha: <span class="date-value">27 de mayo de 2023</span></p>
+        <p class="page-number"></p>
+    </footer>
+
+    <main>
+        <span><%= message %></span>
+        <% for(let i = 0; i < numItems; i++) { %>
+            <div class="content-item">Item <%= i + 1 %></div>
+        
+            <% if ((i+1) % itemsPerPage ===0 && (i+1) !==numItems){ %>
+            <div class="page-break"></div>	
+            <% } %>
+        
+        <% } %>
+    </main> 
+</body>
+</html>
